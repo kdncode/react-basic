@@ -16,7 +16,7 @@ class App extends Component {
 				{/* Parent Comp */}
 				<Parent name="John Wick"/>
 				<hr />
-				<Product />
+				<Product name="iPhone X" />
 			</div>
 		);
 	}

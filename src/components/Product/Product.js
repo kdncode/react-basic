@@ -4,20 +4,29 @@ class Product extends Component {
     constructor(props) {
         super(props);
         this.state = ({
-            editing : false
+            editing: false
         })
+    }
+
+    editChange = () => {
+        this.setState({ editing: true })
+    }
+
+    saveChange = () => {
+        this.setState({ editing: false })
     }
 
     renderNormal = () => {
         return  <div>
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    <button onClick={ this.editChange }>Edit</button>
+                    <button onClick={ this.deleteChange }>Delete</button>
                 </div>
     }
 
     renderForm = () => {
         return <div>
-                    <button>Save</button> 
+                    <input type="text" defaultValue={ this.props.name }/>
+                    <button onClick={ this.saveChange }>Save</button> 
                </div>
     }
 
@@ -33,6 +42,7 @@ class Product extends Component {
         return (
             <div>
                 My Product <br/>
+                {this.props.name} <br/>
                 {this.show_button()}
             </div>
         );
