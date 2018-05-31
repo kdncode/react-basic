@@ -13,20 +13,21 @@ class Product extends Component {
     }
 
     saveChange = () => {
-        this.setState({ editing: false })
+        this.setState({ editing: false });
+        console.log(this.txtName.value)
     }
 
     renderNormal = () => {
         return  <div>
-                    <button onClick={ this.editChange }>Edit</button>
-                    <button onClick={ this.deleteChange }>Delete</button>
+                    <button onClick={ () => this.editChange() }>Edit</button>
+                    <button >Delete</button>
                 </div>
     }
 
     renderForm = () => {
         return <div>
-                    <input type="text" defaultValue={ this.props.name }/>
-                    <button onClick={ this.saveChange }>Save</button> 
+                    <input type="text" ref={ (input) => { this.txtName = input } } defaultValue={ this.props.name }/>
+                    <button onClick={ () => this.saveChange() }>Save</button> 
                </div>
     }
 
