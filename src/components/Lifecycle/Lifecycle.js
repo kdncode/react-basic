@@ -3,12 +3,14 @@ import React, { Component } from 'react';
 class Lifecycle extends Component {
     constructor(props) {
         super(props);
-        console.log('Init');
+        this.state = {
+            component: 'Component Init'
+        };
     }
 
     
     componentWillMount() {
-        console.log('Will ');
+        this.setState({ component: 'Will'});
     }
 
     componentDidMount() {
@@ -18,7 +20,7 @@ class Lifecycle extends Component {
     
     
     render() {
-        console.log('Render');
+        console.log(this.state.component);
         return (
             <div>
                 Lifecycle
