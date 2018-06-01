@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import Props from './Props'
 
 class Lifecycle extends Component {
     constructor(props) {
         super(props);
         console.log('Init')
         this.state = {
-            component: 'Component Init'
+            component: 'Component Init',
+            myName: 'Wick'
         };
     }
 
@@ -18,22 +20,23 @@ class Lifecycle extends Component {
     }
 
     updateState = () => {
-        this.setState({ component: 'New State'})
+        this.setState({ component: 'New State'});
+        this.setState({ myName: 'John'})
     }
 
     // Return False : Stop at ShouldUpdate or True
     shouldComponentUpdate(nextProps, nextState) {
-        console.log('should update ' + nextState);
+        console.log('should update ' + nextState.component);
         return true;
     }
 
     componentWillUpdate(nextProps, nextState) {
-        console.log('Will update ' + nextState);
+        console.log('Will update ' + nextState.component);
     }
     
 
     componentDidUpdate(prevProps, prevState) {
-        console.log('Did update ' + prevState);
+        console.log('Did update ' + prevState.component);
     }
     
     
@@ -43,6 +46,8 @@ class Lifecycle extends Component {
         return (
             
             <div><br/>
+                <Props name={this.state.myName} />
+
                 <button onClick={ () => { this.updateState() }}>Update Lifecycle</button>
             </div>
         );
