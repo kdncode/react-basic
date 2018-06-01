@@ -32,11 +32,15 @@ class App extends Component {
 	}
 
 	editNameProduct = (id, name) => {
-		console.log('edit id ' + id + " " + name)
+		const arrProduct = this.state.products;
+		arrProduct[id].name = name;
+		this.setState({ products: arrProduct })
 	}
 	
 	deleteProduct = (id) => {
-		console.log('delete ' + id)
+		const arrProduct = this.state.products;
+		arrProduct.splice(id, 1);
+		this.setState({ products: arrProduct })
 	}
 
 	show_product = () => {

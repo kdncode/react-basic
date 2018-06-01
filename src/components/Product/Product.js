@@ -9,7 +9,7 @@ class Product extends Component {
     }
 
     buttonEdit = () => {
-        this.setState({ editing: true })
+        this.setState({ editing: true });
     }
 
     buttonSave = () => {
