@@ -20,6 +20,10 @@ class Props extends Component {
         console.log('componentDidUpdate ' + prevProps.name);
     }
     
+    // Check index.js file as well.
+    componentWillUnmount() {
+        console.log('componentWillUnmount')
+    }
     
     
     render() {
