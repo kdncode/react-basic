@@ -7,8 +7,8 @@ import registerServiceWorker from './registerServiceWorker';
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // Automatically delete a component
-setTimeout(() => {
-    ReactDOM.unmountComponentAtNode(document.getElementById('root'))
-}, 5000)
+// setTimeout(() => {
+//     ReactDOM.unmountComponentAtNode(document.getElementById('root'))
+// }, 5000)
 
 registerServiceWorker();
