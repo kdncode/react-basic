@@ -31,14 +31,26 @@ class App extends Component {
 		})
 	}
 
+	editNameProduct = (id, name) => {
+		console.log('edit id ' + id + " " + name)
+	}
+	
+	deleteProduct = (id) => {
+		console.log('delete ' + id)
+	}
+
 	show_product = () => {
 		const listProduct = this.state.products.map( (item, index) => 
-			<Product key={index} name={ item.name } price={ item.price } 
-					 image={item.image } hot={ item.hot } />
+			<Product key={index} index={index} name={ item.name } price={ item.price } 
+					 image={item.image } hot={ item.hot }
+					 edit={ (id, name) => this.editNameProduct(id, name) } 
+					 delete={ (id) => this.deleteProduct(id) } 
+			/>
 		);
 		return listProduct;
 	}
-	
+
+
 	render() {
 		return (
 			<div className="App">

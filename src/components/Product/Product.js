@@ -8,26 +8,31 @@ class Product extends Component {
         })
     }
 
-    editChange = () => {
+    buttonEdit = () => {
         this.setState({ editing: true })
     }
 
-    saveChange = () => {
+    buttonSave = () => {
         this.setState({ editing: false });
+        this.props.edit( this.props.index, this.txtName.value )
         console.log(this.txtName.value)
+    }
+
+    buttonDelete = () => {
+        this.props.delete(this.props.index);
     }
 
     renderNormal = () => {
         return  <div>
-                    <button onClick={ () => this.editChange() }>Edit</button>
-                    <button >Delete</button>
+                    <button onClick={ () => this.buttonEdit() }>Edit</button>
+                    <button onClick={ () => this.buttonDelete() }>Delete</button>
                 </div>
     }
 
     renderForm = () => {
         return <div>
                     <input type="text" ref={ (input) => { this.txtName = input } } defaultValue={ this.props.name }/>
-                    <button onClick={ () => this.saveChange() }>Save</button> 
+                    <button onClick={ () => this.buttonSave() }>Save</button> 
                </div>
     }
 
