@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Parent from '../Parent/Parent';
 import Product from '../Product/Product';
+import Lifecycle from '../Lifecycle/Lifecycle';
 
 class App extends Component {
 	constructor(props) {
@@ -62,12 +63,13 @@ class App extends Component {
 					<img src={logo} className="App-logo" alt="logo" />
 					<h1 className="App-title">Welcome to React</h1>
 				</header>
-
+				<Lifecycle />
 				{/* Parent Comp */}
 				<Parent name="John Wick"/>
 				<hr />
 				{ this.show_product() }
 				<hr />
+				
 			</div>
 		);
 	}
