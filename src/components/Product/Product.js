@@ -42,8 +42,12 @@ class Product extends Component {
     render() {
         return (
             <div>
-                My Product <br/>
+                <br/>
                 {this.props.name} <br/>
+                ${this.props.price} <br/>
+                {this.props.hot} <br/>
+                <img style={{width: '300px', height: '300px'}} 
+                    src={this.props.image} alt=""/> <br/><br/>
                 {this.show_button()}
             </div>
         );
